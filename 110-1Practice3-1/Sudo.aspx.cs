@@ -33,17 +33,16 @@ namespace _110_1Practice3_1
         {
             bool b_ISSue = true;
             bool[] ba_Marked = new bool[9] { false, false, false, false, false, false, false, false, false };
-            for (int j = 0; j < 9; j++)
+            for (int c = 0; c < 9; c++)
             {
                 for (int b = 0; b < 9; b++)
                 {
                     ba_Marked[b] = false;
                     continue;
                 }
-                // 判斷是否有空白
                 for (int i = 0; i < 9; i++)
                 {
-                    if (ia_2DMap[j, i].Equals(String.Empty) == false)
+                    if (ia_2DMap[c, i].Equals(String.Empty) == false)
                     {
                         ba_Marked[i] = true;
                     }
@@ -52,13 +51,13 @@ namespace _110_1Practice3_1
                         b_ISSue = false;
                         break;
                     }
-                    // 判斷單行是否有重複數字
+                    
                     for (int a = 0; a < 9; a++)
                     {
-                        int x = ia_2DMap[j, a];
+                        int x = ia_2DMap[c, a];
                         for (int b = a + 1; b < 9; b++)
                         {
-                            if (x != ia_2DMap[j, b])
+                            if (x != ia_2DMap[c, b])
                             {
                                 continue;
                             }
@@ -80,7 +79,7 @@ namespace _110_1Practice3_1
             bool b_ISSue = true;
             for (int i = 0; i < 9; i++)
             {
-                // 判斷單列是否有重複數字
+                
                 for (int a = 0; a < 9; a++)
                 {
                     int x = ia_2DMap[a, i];
@@ -104,14 +103,14 @@ namespace _110_1Practice3_1
         public bool mt_IsGridPass(int[,] ia_2DMap)
         {
             bool b_ISSue = true;
-            for (int x1 = 0; x1 <= 6; x1 += 3)
+            for (int g = 0; g <= 6; g += 3)
             {
                 for (int a = 0; a < 3; a++)
                 {
-                    int x = ia_2DMap[x1, a];
+                    int x = ia_2DMap[g, a];
                     for (int b = a + 1; b < 3; b++)
                     {
-                        if (x != ia_2DMap[x1, b] && x != ia_2DMap[x1 + 1, b] && x != ia_2DMap[x1 + 2, b])
+                        if (x != ia_2DMap[g, b] && x != ia_2DMap[g + 1, b] && x != ia_2DMap[g + 2, b])
                         {
                             continue;
                         }
@@ -124,10 +123,10 @@ namespace _110_1Practice3_1
                 }
                 for (int a = 3; a <= 6; a++)
                 {
-                    int y = ia_2DMap[x1, a];
+                    int y = ia_2DMap[g, a];
                     for (int b = a + 1; b < 6; b++)
                     {
-                        if (y != ia_2DMap[x1, b] && y != ia_2DMap[x1 + 1, b] && y != ia_2DMap[x1 + 2, b])
+                        if (y != ia_2DMap[g, b] && y != ia_2DMap[g + 1, b] && y != ia_2DMap[g + 2, b])
                         {
                             continue;
                         }
@@ -140,10 +139,10 @@ namespace _110_1Practice3_1
                 }
                 for (int a = 6; a < 9; a++)
                 {
-                    int z = ia_2DMap[x1, a];
+                    int z = ia_2DMap[g, a];
                     for (int b = a + 1; b < 6; b++)
                     {
-                        if (z != ia_2DMap[x1, b] && z != ia_2DMap[x1 + 1, b] && z != ia_2DMap[x1 + 2, b])
+                        if (z != ia_2DMap[g, b] && z != ia_2DMap[g + 1, b] && z != ia_2DMap[g + 2, b])
                         {
                             continue;
                         }
